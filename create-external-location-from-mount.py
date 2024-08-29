@@ -50,6 +50,7 @@ if __name__ == "__main__":
 
     storage_credential = dbutils.widgets.get("storage_credential")
     user_or_groups = dbutils.widgets.get("user_or_groups")
+    cloud = "AZURE" ## "AWS" or "GCP"
 
     if storage_credential is None:
         logger.error("Missing Storage Credential")
@@ -71,7 +72,10 @@ if __name__ == "__main__":
                 mount_name = m.name.replace("/mnt/", "")
                 url = m.source
 
-                if m.source.startswith("abfss://"):
+                # Execute this only if the mount is Azure Blob Storage ADLS Gen2 or AWS or GCP
+                # Skip in case of wasbs:// mount, as wasbs:// is not supported by UC.
+
+                if (cloud == "AZURE" and url.startswith("abfss://")) or cloud in ["AWS", "GCP"]:
                     try:
                         sql = f"""CREATE EXTERNAL LOCATION IF NOT EXISTS `{mount_name}` URL '{url}' WITH (STORAGE CREDENTIAL `{storage_credential}` ) COMMENT 'Created using Script' """
 
