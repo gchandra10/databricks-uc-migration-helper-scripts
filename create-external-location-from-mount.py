@@ -17,7 +17,7 @@
 # COMMAND ----------
 
 # DBTITLE 1,Setup Libraries
-# # Custom Py file
+# Custom Py file
 from common_functions import logger_setup
 
 app_name = "validate_ucx_deployment"
@@ -39,7 +39,7 @@ logger,file_handler = logger_setup(app_name)
 # COMMAND ----------
 
 # DBTITLE 1,Validating Log file creation
-logger.info("Test")
+logger.error("Test")
 
 # COMMAND ----------
 
@@ -95,3 +95,8 @@ if __name__ == "__main__":
             logger.info("No mounts found in hive_metastore.ucx.mounts.")
     except Exception as e:
         print(e)
+
+# COMMAND ----------
+
+file_handler.close()
+logger.removeHandler(file_handler)
