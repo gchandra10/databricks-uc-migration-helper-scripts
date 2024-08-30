@@ -12,7 +12,7 @@ UC does not support wasbs://
 
 If wasbs:// protocol is used, create equivalent containers / storage locations using abfss:// and copy the data from wasbs:// to abfss://.
 
-```azcopy``` tool works better. In case of smaller datasets, read the data from wasbs:// using SPARK and write to abfss://.
+```azcopy``` works better. In case of smaller datasets, read the data from wasbs:// using SPARK and write to abfss://.
 
 ---
 
@@ -20,12 +20,12 @@ If wasbs:// protocol is used, create equivalent containers / storage locations u
 
 Used to create External locations from available Mounts. 
 
-Pre-reg: UCX assessment workflow is executed and output available in *hive_metastore.ucx.mounts*
+Pre-req: UCX assessment workflow is executed and output available in *hive_metastore.ucx.mounts*
 
 ---
 
 **Notebook: uc-hms-compare-tables-views**
 
-Many times Engineers will continue to create or drop Databases / Tables when Migration is in progress. This script will help to identify those changes.
+Many times Engineers will continue to create or drop Databases / Tables when the UC migration is in-progress. This script will help to identify those changes.
 
 
