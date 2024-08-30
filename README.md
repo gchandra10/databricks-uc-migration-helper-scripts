@@ -28,4 +28,12 @@ Pre-req: UCX assessment workflow is executed and output available in *hive_metas
 
 Many times Engineers will continue to create or drop Databases / Tables when the UC migration is in-progress. This script will help to identify those changes.
 
+---
+
+**Notebook: convert-low-level-rdd-to-dataframe**
+
+Contains Non-RDD equivalent code snippets for RDD/Low-Level scripts.
+
+
+
 
