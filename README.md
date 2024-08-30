@@ -4,7 +4,7 @@ To migrate from HMS to UC, [UCX](https://github.com/databrickslabs/ucx) should b
 
 ---
 
-**Script: azure_get_location_protocol**
+**Notebook: azure_get_location_protocol**
 
 Used to identify the storage protocols in Azure cloud.
 
@@ -16,10 +16,16 @@ If wasbs:// protocol is used, create equivalent containers / storage locations u
 
 ---
 
-**Script: create-external-location-from-mount**
+**Notebook: create-external-location-from-mount**
 
 Used to create External locations from available Mounts. 
 
 Pre-reg: UCX assessment workflow is executed and output available in *hive_metastore.ucx.mounts*
 
 ---
+
+**Notebook: uc-hms-compare-tables-views**
+
+Many times Engineers will continue to create or drop Databases / Tables when Migration is in progress. This script will help to identify those changes.
+
+
