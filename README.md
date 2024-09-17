@@ -34,6 +34,11 @@ Many times Engineers will continue to create or drop Databases / Tables when the
 
 Contains Non-RDD equivalent code snippets for RDD/Low-Level scripts.
 
+---
+
+**Notebook: identify-tables-with-same-location**
+
+Its common to have multiple Tables (across databases) will point to same External location. This script will help to identify those Tables.
 
 
 
